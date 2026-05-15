@@ -1,0 +1,265 @@
+Experiment 6: Handoff Mechanism
+
+Aim
+
+To study and analyze the handoff mechanism in cellular mobile communication using Java simulation software.
+
+
+---
+
+Theory
+
+What is Handoff?
+
+Handoff is the process of transferring an active call/data session from one base station to another without disconnecting the call.
+
+It occurs when a mobile user moves from one cell coverage area to another.
+
+
+---
+
+Types of Handoff
+
+1. Hard Handoff
+
+Break before make
+
+Old connection breaks first
+
+Used in GSM
+
+
+
+---
+
+2. Soft Handoff
+
+Make before break
+
+Both connections exist temporarily
+
+Used in CDMA
+
+
+
+---
+
+Procedure
+
+Step 1
+
+Open the Java simulation file on PC.
+
+
+---
+
+Step 2
+
+Enter your name/details if required.
+
+
+---
+
+Step 3
+
+Set parameters such as:
+
+Frequency reuse
+
+Environment
+
+Beamwidth
+
+Carrier frequency
+
+SNR
+
+Cell radius
+
+Noise figure
+
+Mobile speed
+
+
+
+---
+
+Step 4
+
+Click on SET button to apply parameters.
+
+
+---
+
+Step 5
+
+Click on START button.
+
+Observe:
+
+Number of handoffs
+
+Call drops
+
+Outage probability
+
+Reading time
+
+
+
+---
+
+Step 6
+
+Enter observations in observation box and click SUBMIT.
+
+
+---
+
+Step 7
+
+Click on REPORT to generate PDF report.
+
+
+---
+
+Parameters Used
+
+Parameter	Value
+
+Reuse	3
+Carrier Frequency	0.8 GHz
+Beam Width	70°
+Cell Radius	50 m
+SNR	5 dB
+Noise Figure	7 dB
+Mobile Speed	50 kmph
+
+
+
+---
+
+Observation
+
+As mobile moves between cells, handoff occurs successfully.
+
+Higher SNR reduces call drops.
+
+Increased mobile speed increases handoff frequency.
+
+Improper threshold values may cause outage.
+
+
+
+---
+
+Result
+
+The handoff mechanism was successfully studied using Java simulation software and parameters such as handoffs, call drops, and outage probability were analyzed.
+
+
+---
+
+Short Viva Answers
+
+1. What is handoff?
+
+Transfer of ongoing call from one base station to another.
+
+
+---
+
+2. Why is handoff required?
+
+To maintain continuous communication when user moves.
+
+
+---
+
+3. What is hard handoff?
+
+Old connection breaks before new connection forms.
+
+
+---
+
+4. What is soft handoff?
+
+New connection forms before old connection breaks.
+
+
+---
+
+5. What causes handoff?
+
+Movement of mobile user between cells.
+
+
+---
+
+6. What is call drop?
+
+Unexpected disconnection of active call.
+
+
+---
+
+7. What is outage probability?
+
+Probability that signal strength falls below threshold.
+
+
+---
+
+8. What is SNR?
+
+Signal-to-Noise Ratio.
+
+
+---
+
+9. What happens when SNR increases?
+
+Communication quality improves.
+
+
+---
+
+10. Which handoff is used in GSM?
+
+Hard handoff.
+
+
+---
+
+11. Which handoff is used in CDMA?
+
+Soft handoff.
+
+
+---
+
+12. What is co-channel interference?
+
+Interference caused by same frequency reuse in nearby cells.
+
+
+---
+
+13. What is frequency reuse?
+
+Using same frequency channels in different cells.
+
+
+---
+
+14. What is cell radius?
+
+Coverage area of a base station.
+
+
+---
+
+15. Advantage of handoff?
+
+Provides uninterrupted communication.
