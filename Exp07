@@ -1,0 +1,262 @@
+Experiment 7: Outage Probability, LCR & ADF in SISO for SC and MRC
+
+Aim
+
+To study outage probability, Level Crossing Rate (LCR), and Average Fade Duration (ADF) in SISO system using Selection Combining (SC) and Maximal Ratio Combining (MRC). 
+
+
+---
+
+Short Theory
+
+Small Scale Fading
+
+Small scale fading causes rapid fluctuation in received signal strength due to:
+
+Reflection
+
+Scattering
+
+Diffraction
+
+
+
+
+
+---
+
+Doppler Shift Formula
+
+f_m = \frac{v f_c}{c}
+
+Where:
+
+ = mobile velocity
+
+ = carrier frequency
+
+ = speed of light
+
+
+
+---
+
+Coherence Time
+
+T_c = \frac{9}{16\pi f_m}
+
+If:
+
+ → Slow fading
+
+ → Fast fading
+
+
+
+
+
+---
+
+Level Crossing Rate (LCR)
+
+LCR is the rate at which signal crosses a specified threshold level.
+
+For Rayleigh fading:
+
+L_R = \sqrt{2\pi} f_m \rho e^{-\rho^2}
+
+
+
+
+---
+
+Average Fade Duration (ADF)
+
+ADF is the average time for which signal remains below threshold.
+
+\bar{t} = \frac{e^{\rho^2}-1}{\rho f_m \sqrt{2\pi}}
+
+
+
+
+---
+
+Outage Probability
+
+Probability that received signal falls below threshold level.
+
+P(R)=1-e^{-\frac{R^2}{2\sigma^2}}
+
+
+
+
+---
+
+Procedure
+
+Step 1
+
+Run the Java simulation file.
+
+
+---
+
+Step 2
+
+Enter your name and click OK. 
+
+
+---
+
+Step 3
+
+Enter input parameters and click RESET. Observe waveform. 
+
+
+---
+
+Step 4
+
+Enter LCR Exp and ADF Exp values for:
+
+MRC
+
+SC
+
+
+Then click SUBMIT. 
+
+
+---
+
+Step 5
+
+Click REPORT to generate PDF report. 
+
+
+---
+
+Observation
+
+MRC gives better performance than SC.
+
+Increasing Doppler frequency increases fading.
+
+Higher threshold increases outage probability.
+
+MRC reduces fade duration and improves signal quality.
+
+
+
+---
+
+Result
+
+The outage probability, LCR, and ADF for SISO system using SC and MRC were successfully studied and analyzed.
+
+
+---
+
+Short Viva Answers
+
+1. What is fading?
+
+Variation in received signal strength.
+
+
+---
+
+2. What is flat fading?
+
+Entire signal bandwidth experiences same fading.
+
+
+---
+
+3. What is selective fading?
+
+Different frequencies experience different fading.
+
+
+---
+
+4. What is outage probability?
+
+Probability that signal falls below threshold.
+
+
+---
+
+5. What is LCR?
+
+Rate at which signal crosses threshold level.
+
+
+---
+
+6. What is ADF?
+
+Average time signal stays below threshold.
+
+
+---
+
+7. What is Doppler shift?
+
+Frequency shift due to motion.
+
+
+---
+
+8. What is coherence time?
+
+Time duration over which channel remains constant.
+
+
+---
+
+9. What is SC?
+
+Selection Combining selects strongest signal branch.
+
+
+---
+
+10. What is MRC?
+
+Maximal Ratio Combining combines all signals with weights.
+
+
+---
+
+11. Which is better: SC or MRC?
+
+MRC gives better performance.
+
+
+---
+
+12. What causes small scale fading?
+
+Reflection, diffraction, and scattering.
+
+
+---
+
+13. What is Rayleigh fading?
+
+Fading without line-of-sight component.
+
+
+---
+
+14. What happens when mobile speed increases?
+
+Doppler shift increases.
+
+
+---
+
+15. Application of diversity combining?
+
+Improves wireless communication reliability.
