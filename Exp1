@@ -1,0 +1,258 @@
+import numpy as np
+
+# Walsh Codes
+c1 = [1, 1, 1, 1]
+c2 = [1, -1, 1, -1]
+c3 = [1, 1, -1, -1]
+c4 = [1, -1, -1, 1]
+
+rc = []
+
+print("===== CDMA using Walsh Codes =====")
+
+# Input data bits
+print("Enter the data bits (+1 or -1):")
+
+d1 = int(input("Enter D1: "))
+d2 = int(input("Enter D2: "))
+d3 = int(input("Enter D3: "))
+d4 = int(input("Enter D4: "))
+
+# Multiply data bits with Walsh codes
+r1 = np.multiply(c1, d1)
+r2 = np.multiply(c2, d2)
+r3 = np.multiply(c3, d3)
+r4 = np.multiply(c4, d4)
+
+print("\nEncoded Signals:")
+print("R1 =", r1)
+print("R2 =", r2)
+print("R3 =", r3)
+print("R4 =", r4)
+
+# Combine all signals
+resultant_channel = r1 + r2 + r3 + r4
+
+print("\nResultant Channel Signal:")
+print(resultant_channel)
+
+# Select receiver station
+channel = int(input("\nEnter station to listen "
+                    "(C1=1, C2=2, C3=3, C4=4): "))
+
+# Assign receiver code
+if channel == 1:
+    rc = c1
+elif channel == 2:
+    rc = c2
+elif channel == 3:
+    rc = c3
+elif channel == 4:
+    rc = c4
+else:
+    print("Invalid Channel")
+    exit()
+
+print("\nReceiver Code:", rc)
+
+# Inner product operation
+inner_product = np.multiply(resultant_channel, rc)
+
+print("\nInner Product:")
+print(inner_product)
+
+# Recover transmitted bit
+res1 = sum(inner_product)
+data = res1 / len(inner_product)
+
+print("\nRecovered Data Bit:", data)Code Explanation
+
+1. Import Library
+
+import numpy as np
+
+Used for mathematical operations on arrays.
+
+
+---
+
+2. Walsh Codes
+
+c1 = [1, 1, 1, 1]
+c2 = [1, -1, 1, -1]
+c3 = [1, 1, -1, -1]
+c4 = [1, -1, -1, 1]
+
+These are orthogonal Walsh codes assigned to different users/stations.
+
+
+---
+
+3. Input Data Bits
+
+d1 = int(input("Enter D1: "))
+
+User enters data bits as:
+
++1 → binary 1
+
+-1 → binary 0
+
+
+
+---
+
+4. Encoding Process
+
+r1 = np.multiply(c1, d1)
+
+Each data bit is multiplied with its Walsh code to spread the signal.
+
+
+---
+
+5. Resultant Channel Signal
+
+resultant_channel = r1 + r2 + r3 + r4
+
+All encoded signals are added together to form a combined channel signal.
+
+
+---
+
+6. Receiver Channel Selection
+
+channel = int(input())
+
+Receiver selects which user data to recover.
+
+
+---
+
+7. Inner Product Operation
+
+inner_product = np.multiply(resultant_channel, rc)
+
+Receiver multiplies received signal with selected Walsh code.
+
+
+---
+
+8. Recover Data Bit
+
+data = res1 / len(inner_product)
+
+After summation and normalization, original transmitted data bit is recovered.
+
+
+---
+
+Possible Changes
+
+1. Accept binary input (0 and 1)
+
+
+2. Add noise in communication channel
+
+
+3. Generate Walsh codes dynamically
+
+
+4. Add graphical plotting using matplotlib
+
+
+5. Allow multiple-bit transmission
+
+
+6. Create GUI using Tkinter
+
+
+7. Add error detection
+
+
+
+
+---
+
+Short Viva Answers
+
+1. What is CDMA?
+
+CDMA is a multiple access technique where multiple users share the same channel using unique codes.
+
+
+---
+
+2. What are Walsh codes?
+
+Walsh codes are orthogonal codes used in CDMA systems.
+
+
+---
+
+3. Why are Walsh codes used?
+
+Because they prevent interference between users.
+
+
+---
+
+4. What is orthogonality?
+
+Two codes are orthogonal if their cross-correlation is zero.
+
+
+---
+
+5. Why use +1 and -1?
+
+They simplify mathematical operations in CDMA.
+
+
+---
+
+6. What is spreading?
+
+Multiplying data with code to spread signal over bandwidth.
+
+
+---
+
+7. What is despreading?
+
+Recovering original data using the same code.
+
+
+---
+
+8. What is inner product?
+
+Element-wise multiplication followed by summation.
+
+
+---
+
+9. Why divide by code length?
+
+To normalize and recover the original bit.
+
+
+---
+
+10. What happens if wrong code is selected?
+
+Correct data cannot be recovered.
+
+
+---
+
+11. Applications of CDMA?
+
+Mobile communication, GPS, satellite communication, and 3G networks.
+
+
+---
+
+12. Advantage of CDMA?
+
+Multiple users can transmit simultaneously with less interference.
