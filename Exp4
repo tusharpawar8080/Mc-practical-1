@@ -1,0 +1,257 @@
+Code Explanation (BPSK BER Simulation in AWGN)
+
+1. Clear Previous Data
+
+clear
+
+Clears all previous variables from workspace.
+
+
+---
+
+2. Number of Bits
+
+N = 10^6;
+
+Generates 10 lakh bits for transmission.
+
+
+---
+
+3. Random Generator Initialization
+
+rng(100);
+
+Initializes random generator for same output every run.
+
+
+---
+
+4. Generate Random Bits
+
+ip = rand(1,N) > 0.5;
+
+Creates random binary bits:
+
+1 if value > 0.5
+
+0 otherwise
+
+
+
+---
+
+5. BPSK Modulation
+
+s = 2*ip - 1;
+
+Converts bits into BPSK symbols:
+
+1 → +1
+
+0 → -1
+
+
+
+---
+
+BPSK Formula
+
+s = 2b - 1
+
+
+---
+
+6. AWGN Noise Generation
+
+n = 1/sqrt(2)*(randn(1,N) + 1i*randn(1,N));
+
+Generates Gaussian noise for channel.
+
+
+---
+
+7. Eb/N0 Range
+
+Eb_N0_dB = -3:10;
+
+Signal-to-noise ratio varies from -3 dB to 10 dB.
+
+
+---
+
+8. Add Noise
+
+y = s + 10^(-Eb_N0_dB(ii)/20)*n;
+
+Adds noise to transmitted signal.
+
+
+---
+
+9. Receiver Decision
+
+ipHat = real(y) > 0;
+
+Receiver checks:
+
+Positive → 1
+
+Negative → 0
+
+
+
+---
+
+10. Count Errors
+
+nErr(ii) = sum(ip ~= ipHat);
+
+Counts incorrect bits.
+
+
+---
+
+11. BER Calculation
+
+simBer = nErr / N;
+
+Calculates simulated Bit Error Rate.
+
+
+---
+
+12. Theoretical BER
+
+theoryBer = 0.5 * erfc(sqrt(10.^(Eb_N0_dB/10)));
+
+Computes theoretical BER for BPSK.
+
+
+---
+
+BER Formula
+
+P_b = \frac{1}{2}\operatorname{erfc}\left(\sqrt{\frac{E_b}{N_0}}\right)
+
+
+---
+
+13. Plotting
+
+semilogy(Eb_N0_dB, theoryBer)
+
+Plots BER vs Eb/N0 graph on logarithmic scale.
+
+
+---
+
+Possible Changes
+
+1. Add Rayleigh fading channel
+
+
+2. Compare BPSK with QPSK
+
+
+3. Reduce number of bits for faster execution
+
+
+4. Add constellation diagram
+
+
+5. Plot separate simulation and theory graphs
+
+
+6. Add SNR calculation
+
+
+7. Implement OFDM system
+
+
+
+
+---
+
+Short Viva Answers
+
+1. What is BPSK?
+
+Binary Phase Shift Keying is a digital modulation technique using two phases.
+
+
+---
+
+2. Why use BPSK?
+
+It provides better noise immunity and simple implementation.
+
+
+---
+
+3. What is AWGN?
+
+Additive White Gaussian Noise is random channel noise.
+
+
+---
+
+4. What is BER?
+
+Bit Error Rate is ratio of erroneous bits to total bits.
+
+
+---
+
+5. What is Eb/N0?
+
+Energy per bit to noise power spectral density ratio.
+
+
+---
+
+6. Why use semilogy?
+
+Because BER values are very small and logarithmic plotting improves visibility.
+
+
+---
+
+7. What is modulation?
+
+Process of converting digital data into transmittable signals.
+
+
+---
+
+8. What happens when Eb/N0 increases?
+
+BER decreases.
+
+
+---
+
+9. Why use random bits?
+
+To simulate real communication systems.
+
+
+---
+
+10. What is theoretical BER?
+
+Mathematical BER value without practical imperfections.
+
+
+---
+
+11. What is simulated BER?
+
+BER obtained from practical simulation.
+
+
+---
+
+12. Why is BPSK robust?
+
+Because symbols are far apart in constellation diagram.
