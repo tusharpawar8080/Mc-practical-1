@@ -1,0 +1,185 @@
+DHCP Server Configuration Using Your Commands
+
+Step 1: Enter Privileged Mode
+
+enable
+
+Moves router to privileged EXEC mode.
+
+
+---
+
+Step 2: Enter Global Configuration Mode
+
+configure terminal
+
+Used to configure router settings.
+
+
+---
+
+Step 3: Configure Interface
+
+interface FastEthernet0/0
+
+Selects FastEthernet0/0 interface.
+
+
+---
+
+Step 4: Assign IP Address
+
+ip address 192.168.1.1 255.255.255.0
+
+Sets router IP address.
+
+
+---
+
+Step 5: Enable Interface
+
+no shutdown
+
+Activates the interface.
+
+
+---
+
+Step 6: Exit Interface Mode
+
+exit
+
+Returns to global configuration mode.
+
+
+---
+
+Step 7: Create DHCP Pool
+
+ip dhcp pool mypool
+
+Creates DHCP pool named mypool.
+
+
+---
+
+Step 8: Define Network
+
+network 192.168.1.0 255.255.255.0
+
+Defines network range for DHCP clients.
+
+
+---
+
+Step 9: Configure Default Gateway
+
+default-router 192.168.1.1
+
+Sets router as default gateway.
+
+
+---
+
+Step 10: Configure DNS Server
+
+dns-server 192.168.1.10
+
+Assigns DNS server address.
+
+
+---
+
+Important Additional Command
+
+Before creating DHCP pool, add:
+
+ip dhcp excluded-address 192.168.1.1
+
+This prevents router IP from being assigned to clients.
+
+
+---
+
+Full Final Commands
+
+enable
+configure terminal
+
+interface FastEthernet0/0
+ip address 192.168.1.1 255.255.255.0
+no shutdown
+exit
+
+ip dhcp excluded-address 192.168.1.1
+
+ip dhcp pool mypool
+network 192.168.1.0 255.255.255.0
+default-router 192.168.1.1
+dns-server 192.168.1.10
+
+
+---
+
+PC Configuration
+
+On PC:
+
+Desktop → IP Configuration → DHCP
+
+IP will be assigned automatically.
+
+
+---
+
+Verification Commands
+
+show ip dhcp binding
+
+Shows assigned IP addresses.
+
+
+---
+
+Short Viva Answers
+
+What is DHCP?
+
+DHCP automatically assigns IP addresses.
+
+
+---
+
+Why use DHCP?
+
+To reduce manual IP configuration.
+
+
+---
+
+What is DHCP pool?
+
+Range of IP addresses assigned to clients.
+
+
+---
+
+What is excluded-address?
+
+Reserved IP that DHCP cannot assign.
+
+
+---
+
+Why use no shutdown?
+
+To activate router interface.
+
+
+---
+
+DHCP Port Numbers?
+
+Server → 67
+
+Client → 68
