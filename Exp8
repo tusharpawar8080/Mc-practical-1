@@ -1,0 +1,254 @@
+Experiment 8: File Sharing using TCP Protocol
+
+Aim
+
+To perform file transfer between client and server using TCP/IP protocol. 
+
+
+---
+
+Objectives
+
+Study socket programming
+
+Understand client-server model
+
+Perform remote communication
+
+
+
+
+
+---
+
+Theory
+
+What is Socket?
+
+A socket is an endpoint for communication between two processes over a network. 
+
+
+---
+
+Types of Sockets
+
+1. Stream Socket
+
+Uses TCP
+
+Reliable communication
+
+Ordered data transfer
+
+
+2. Datagram Socket
+
+Uses UDP
+
+Faster but unreliable
+
+
+3. Raw Socket
+
+Direct access to protocols
+
+
+4. Sequenced Packet Socket
+
+Preserves packet boundaries
+
+
+
+
+
+---
+
+Client-Server Model
+
+Client sends request
+
+Server responds
+
+Multiple clients can communicate with one server
+
+
+
+
+
+---
+
+TCP Protocol
+
+TCP is:
+
+Connection oriented
+
+Reliable
+
+Error checked
+
+
+If acknowledgement is not received, TCP retransmits data automatically. 
+
+
+---
+
+Procedure
+
+Step 1
+
+Open Python/Linux environment.
+
+
+---
+
+Step 2
+
+Run server program first.
+
+
+---
+
+Step 3
+
+Run client program.
+
+
+---
+
+Step 4
+
+Establish TCP connection between client and server.
+
+
+---
+
+Step 5
+
+Transfer file successfully.
+
+
+---
+
+Result
+
+File transfer between client and server using TCP protocol was successfully performed.
+
+
+---
+
+Advantages of TCP
+
+Reliable communication
+
+Error detection
+
+Ordered delivery
+
+Connection oriented
+
+
+
+---
+
+Applications
+
+File transfer
+
+Web browsing
+
+Email services
+
+Remote login
+
+
+
+---
+
+Short Viva Answers
+
+1. What is TCP?
+
+Transmission Control Protocol used for reliable communication.
+
+
+---
+
+2. What is a socket?
+
+Endpoint for network communication.
+
+
+---
+
+3. What is client-server model?
+
+Client requests service and server provides service.
+
+
+---
+
+4. Why is TCP reliable?
+
+Because it uses acknowledgements and retransmission.
+
+
+---
+
+5. Difference between TCP and UDP?
+
+TCP	UDP
+
+Reliable	Unreliable
+Connection oriented	Connectionless
+Slower	Faster
+
+
+
+---
+
+6. What is stream socket?
+
+Socket using TCP protocol.
+
+
+---
+
+7. What is datagram socket?
+
+Socket using UDP protocol.
+
+
+---
+
+8. What is IP address?
+
+Unique address of device in network.
+
+
+---
+
+9. What is port number?
+
+Logical communication endpoint.
+
+
+---
+
+10. What is remote communication?
+
+Communication between systems over network.
+
+
+---
+
+11. Which protocol is used for file transfer?
+
+TCP.
+
+
+---
+
+12. Why is TCP used in file sharing?
+
+Because data delivery is reliable and ordered.
